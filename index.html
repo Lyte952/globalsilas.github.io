@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>GlobalSilas</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+</head>
+<body>
+
+    <div id="app"></div>
+    <script type="text/babel">
+
+        class Top extends React.Component {
+
+            render () {
+                return( 
+                    <div id="tops">
+                        <div id="top">
+                        <nav id="first-nav">
+                            <img src="tradsign.png" alt="." width="30" height="30"></img> 
+                            <h1 id="top-name">Baffour Silas Anthony</h1>
+                            <button value="AboutMe" className="top-button" onClick={this.props.mainH}>About Me</button>
+                            <button value="ANC" className="top-button" onClick={this.props.mainH}>Asunafo North Constituency</button>
+                            <button value="MyProjects" className="top-button" onClick={this.props.mainH}>My projects</button>
+                            <button value="Chat" className="top-button" onClick={this.props.mainH}>Let's Chat</button>
+                            <button value="Gallery" className="top-button" onClick={this.props.mainH}>Gallery</button>      
+                        </nav>
+                        </div>
+                        <br />
+                    </div>
+                );
+                }
+        }
+
+        class AboutMe extends React.Component {
+
+            constructor(props){
+                super(props);
+                this.state = {
+                    whiteButton: true,
+                    whiteButton2: false,
+                    whiteButton3: false
+                };
+            }
+
+            render() {
+
+                return( 
+                    <div id="purpose-pad">
+                        <div id="MyPurpose">
+                            <h2 id="purpose-text">My Purpose</h2>
+                            <h4 id="purpose-desc">I believe purpose is very subjective and vary from person to person <br/> and it is very important that
+                                                    each person discovers his or her purpose in life. <br/>
+                                                    I believe my purpose is to serve my country <br/> and to also provide assistance to the needy and less-
+                                                    privileged.</h4> 
+                        </div>
+
+                        <div id="switch-buttons">
+                            <nav id="homedown">
+                                <br/>
+                                <button value="personal" className={this.state.whiteButton? "whiteButton": "blueButton"} onClick={this.downdesc}>Personal Life</button>
+                                <br/>
+                                <button value="political" className={this.state.whiteButton2? "whiteButton": "blueButton"}  onClick={this.downdesc}>Political Life</button>
+                                <br/>
+                                <button value="interests" className={this.state.whiteButton3? "whiteButton": "blueButton"}  onClick={this.downdesc}>Interests</button>
+                            </nav>
+                            <h4 id="purposeDesc">I hail from Ejisu in the Ashanti Region of Ghana and I was born <br/> on Monday, February 12, 2001, at Kukuom in the Ahafo Region of Ghana. <br/><br/> I had my basic education at Henry Hüging Memorial School <br/> and my secondary school education at Opoku Ware School (OWASS) <br/> in Kumasi where I offered General Science. <br/> I proceeded to the University of Energy and Natural Resources to offer a Bachelor of <br/> Science degree in Medical Laboratory Science. <br/> I have worked as an intern at the Sunyani Municipal Hospital, Sunyani Regional Hospital and <br/> the University of Ghana Medical Centre (UGMC), Accra. <br/> I currently have no substantive working experience. <br/><br/> My short-term goal is to gain admission into Law school and pursue Law. <br/> My long-term goals are to be actively involved in Medical research and politics to contribute my quota to <br/> the development of my country specifically in the sanitation, health and economic sectors. <br/> My key skills and competences are Writing, Public speaking and effective communication. <br/> My core values as a person are, Humility, Altruism, Service, Responsibility, Kindness, Integrity and Honesty.</h4>
+                        </div>
+                    </div>
+                );
+            }
+            
+            downdesc = (event) => {
+                var purposeDesc = document.getElementById("purposeDesc");
+                    if(event.target.value=="personal"){
+                        purposeDesc.innerHTML = "I hail from Ejisu in the Ashanti Region of Ghana and I was born <br/> on Monday, February 12, 2001, at Kukuom in the Ahafo Region of Ghana. <br/><br/> I had my basic education at Henry Hüging Memorial School <br/> and my secondary school education at Opoku Ware School (OWASS) <br/> in Kumasi where I offered General Science. <br/> I proceeded to the University of Energy and Natural Resources to offer a Bachelor of <br/> Science degree in Medical Laboratory Science. <br/> I have worked as an intern at the Sunyani Municipal Hospital, Sunyani Regional Hospital and <br/> the University of Ghana Medical Centre (UGMC), Accra. <br/> I currently have no substantive working experience. <br/><br/> My short-term goal is to gain admission into Law school and pursue Law. <br/> My long-term goals are to be actively involved in Medical research and politics to contribute my quota to <br/> the development of my country specifically in the sanitation, health and economic sectors. <br/> My key skills and competences are Writing, Public speaking and effective communication. <br/> My core values as a person are, Humility, Altruism, Service, Responsibility, Kindness, Integrity and Honesty.";
+                        this.setState({
+                            whiteButton: true,
+                            whiteButton2: false,
+                            whiteButton3: false
+                        });
+                    }else if(event.target.value=="political") {
+                        purposeDesc.innerHTML = "I am a proud member of the New Patriotic Party and currently serving a one-year term of office <br/> as the President of the Tertiary Students ’ Confederacy of the New Patriotic Party at the <br/> University of Energy and Natural Resources. <br/><br/> In my term of office as TESCON President, I have undertaken measures which have boosted the <br/> membership of TESCON-UENR, created an effective database for the association, established a <br/> political communication training school to help equip members with basic communication skills, <br/> with the Bono Regional Communications Director of the NPP and his team as facilitators. <br/><br/> I also organized interesting and educative programs like the Entrepreneurship Seminar and Skills <br/> enhancement program which featured Mr Eric Kofi Ofosu Nkansah, CEO, National <br/> Entrepreneurship and Innovation Programme, as the Keynote Speaker. The primary objective of <br/> this entrepreneurship seminar with theme, From Idea to Launch; From Startup to Success <br/> was to provide aspiring entrepreneurs with the knowledge, skills, and resources they need to start <br/> and grow successful businesses and it was achieved at the end of the seminar. <br/> I also organized a political mentorship and Leadership summit with theme, ‘Building your <br/> leadership capacity to become part of the problem-solving class of the next generation’ and <br/> it featured the Hon Kojo Oppong Nkrumah, Minister of state responsible for information and <br/> Member of parliament for Ofoase/Ayirebi, as Keynote speaker, with our Guest speakers being, <br/> Hon Dr Matthew Opoku Prempeh, Minister for Energy and Member of Parliament for Manhyia <br/> South and Hon Alexander Kwamena Afenyo-Markin, Deputy Majority Leader and Member of <br/> Parliament for Effutu. The summit aimed to provide comprehensive and interactive experience <br/> for youth interested in politics and leadership, offering them opportunities to learn from <br/> experienced leaders, develop their skills, and connect with other like-minded individuals. <br/> I have also organized financial literacy seminar which taught participants how to prevent getting <br/> into unsustainable debt burdens, poor credit, money loss and higher risks of being a victim of <br/> fraud which may all together damage their long-term financial success and impacting their <br/> ability to live life on their terms. <br/><br/> I also undertook measures to provide Internship and National Service opportunities to continuing <br/> students and final year students, respectively, to their various institutions, facilities or companies <br/> of choice. <br/> I am building on my potentials through mentorship from experienced politicians to serve my <br/> community and country by contributing my skills and resources towards the realization of a <br/> better tomorrow, in a higher capacity.";
+                        this.setState({
+                            whiteButton: false,
+                            whiteButton2: true,
+                            whiteButton3: false
+                        });
+                    } else if(event.target.value=="interests") {
+                        purposeDesc.innerHTML = "I love football; Kumasi Asante Kotoko, Ghana Black Stars and FC Barcelona are my favourite <br/> football teams. I am also TeamMessi. <br/> I write occasionally and I am a lover of chorale music and hymns. <br/> I am a Christian and fellowship at the Seventh Day Adventist church, Central at Goaso. <br/><br/><br/><br/><br/><br/><br/>";
+                        this.setState({
+                            whiteButton: false,
+                            whiteButton2: false,
+                            whiteButton3: true
+                        });
+                    }
+            };
+
+        }
+
+
+        class ANC extends React.Component {
+            render() {
+                return(
+                    <div>
+                    <h1>Asunafo North Constituency</h1> 
+                    </div>
+                );
+            }
+        };
+
+        class MyProjects extends React.Component {
+            render() {
+                return(
+                    <div>
+                    <h1>My Projects</h1> 
+                    </div>
+                );
+            }
+        };
+
+        class Chat extends React.Component {
+            render() {
+                return(
+                    <div>
+                    <h1>Let's Chat</h1>    
+                    </div>
+                );
+            }
+        };
+
+        class Gallery extends React.Component {
+            render() {
+                return(
+                    <div>
+                    <h1>Gallery </h1>  
+                    </div>
+                );
+            }
+        };
+
+
+        class App extends React.Component {
+
+            constructor(props) {
+                super(props);
+                this.state = {
+                    main: AboutMe
+                }
+            }
+
+            render() {
+                const MainComponent = this.state.main;
+
+                return (
+                    <div>
+                         <Top mainH = {this.mainHome}/>
+                         <MainComponent />
+                    </div>
+                );
+            }
+
+                mainHome = (event) => {
+                    if(event.target.value=="AboutMe") {
+                    this.setState({
+                        main: AboutMe
+                    });}
+                    else if(event.target.value=="ANC") {
+                    this.setState({
+                        main: ANC
+                    });}
+                    else if(event.target.value=="MyProjects") {
+                    this.setState({
+                        main: MyProjects
+                    });}
+                    else if(event.target.value=="Chat") {
+                    this.setState({
+                        main: Chat
+                    });}
+                    else if(event.target.value=="Gallery") {
+                    this.setState({
+                        main: Gallery
+                    });}
+            };
+        }
+
+        const container = document.querySelector('#app');
+        const root = ReactDOM.createRoot(container);
+        root.render(<App />);
+    </script>
+    <br>
+    <div id="footer">
+        <h1 id="down-name"> <img src="tradsign.png" alt="." title="Traditional logo" width="25" height="25"></img> Baffour Silas Anthony</h1>
+        <div id="socials">
+            <a href="https://www.facebook.com/profile/php?id=100064142581041" title="facebook"><svg fill="#ffffff" width="35px" height="35px" viewBox="-3.2 -3.2 38.40 38.40" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>facebook</title> <path d="M30.996 16.091c-0.001-8.281-6.714-14.994-14.996-14.994s-14.996 6.714-14.996 14.996c0 7.455 5.44 13.639 12.566 14.8l0.086 0.012v-10.478h-3.808v-4.336h3.808v-3.302c-0.019-0.167-0.029-0.361-0.029-0.557 0-2.923 2.37-5.293 5.293-5.293 0.141 0 0.281 0.006 0.42 0.016l-0.018-0.001c1.199 0.017 2.359 0.123 3.491 0.312l-0.134-0.019v3.69h-1.892c-0.086-0.012-0.185-0.019-0.285-0.019-1.197 0-2.168 0.97-2.168 2.168 0 0.068 0.003 0.135 0.009 0.202l-0.001-0.009v2.812h4.159l-0.665 4.336h-3.494v10.478c7.213-1.174 12.653-7.359 12.654-14.814v-0z"></path> </g></svg></a>
+            <a href="https://instagram.com/globalsilas/" title="instagram"><svg width="35px" height="35px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path stroke="#ffffff" stroke-width="12" d="M96 162c-14.152 0-24.336-.007-32.276-.777-7.849-.761-12.87-2.223-16.877-4.741a36 36 0 0 1-11.33-11.329c-2.517-4.007-3.98-9.028-4.74-16.877C30.007 120.336 30 110.152 30 96c0-14.152.007-24.336.777-32.276.76-7.849 2.223-12.87 4.74-16.877a36 36 0 0 1 11.33-11.33c4.007-2.517 9.028-3.98 16.877-4.74C71.663 30.007 81.847 30 96 30c14.152 0 24.336.007 32.276.777 7.849.76 12.87 2.223 16.877 4.74a36 36 0 0 1 11.329 11.33c2.518 4.007 3.98 9.028 4.741 16.877.77 7.94.777 18.124.777 32.276 0 14.152-.007 24.336-.777 32.276-.761 7.849-2.223 12.87-4.741 16.877a36 36 0 0 1-11.329 11.329c-4.007 2.518-9.028 3.98-16.877 4.741-7.94.77-18.124.777-32.276.777Z"></path><circle cx="96" cy="96" r="30" stroke="#ffffff" stroke-width="12"></circle><circle cx="135" cy="57" r="9" fill="#ffffff"></circle></g></svg></a>
+            <a href="https://twitter.com/globalsilas" title="twitter" ><svg fill="#ffffff" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="7935ec95c421cee6d86eb22ecd12f847"> <path style="display: inline;" d="M459.186,151.787c0.203,4.501,0.305,9.023,0.305,13.565 c0,138.542-105.461,298.285-298.274,298.285c-59.209,0-114.322-17.357-160.716-47.104c8.212,0.973,16.546,1.47,25.012,1.47 c49.121,0,94.318-16.759,130.209-44.884c-45.887-0.841-84.596-31.154-97.938-72.804c6.408,1.227,12.968,1.886,19.73,1.886 c9.55,0,18.816-1.287,27.617-3.68c-47.955-9.633-84.1-52.001-84.1-102.795c0-0.446,0-0.882,0.011-1.318 c14.133,7.847,30.294,12.562,47.488,13.109c-28.134-18.796-46.637-50.885-46.637-87.262c0-19.212,5.16-37.218,14.193-52.7 c51.707,63.426,128.941,105.156,216.072,109.536c-1.784-7.675-2.718-15.674-2.718-23.896c0-57.891,46.941-104.832,104.832-104.832 c30.173,0,57.404,12.734,76.525,33.102c23.887-4.694,46.313-13.423,66.569-25.438c-7.827,24.485-24.434,45.025-46.089,58.002 c21.209-2.535,41.426-8.171,60.222-16.505C497.448,118.542,479.666,137.004,459.186,151.787z"> </path> </g> </g></svg></a>
+        </div>
+        <hr>
+        <h6>Powered By LyteCodes ©️ 2023</h6>
+    </div>
+</body>
+</html>
