@@ -56,10 +56,10 @@
                             <h2 id="purpose-text">My Purpose</h2>
                             <h4 id="purpose-desc">I believe purpose is very subjective and vary from person to person <br/> and it is very important that
                                                     each person discovers his or her purpose in life. <br/>
-                                                    I believe my purpose is to serve my country <br/> and to also provide assistance to the needy and less-
+                                                    I believe my purpose is to serve my country <br/> and to also provide assistance to the needy and the less
                                                     privileged.</h4> 
                         </div>
-
+                        <hr/>
                         <div id="switch-buttons">
                             <nav id="homedown">
                                 <br/>
@@ -115,6 +115,9 @@
         };
 
         class MyProjects extends React.Component {
+
+           
+
             render() {
                 return(
                     <div>
@@ -122,13 +125,52 @@
                     </div>
                 );
             }
+
+            
+
         };
 
         class Chat extends React.Component {
+
+             constructor(props){
+                    super (props);
+                    this.state = {
+                        input1: "",
+                        input2: "",
+                        message: ""
+                    };
+                }
+
+            handleChange = (event) => {
+                if (event.target.id=="input1"){
+                this.setState({
+                    input1: event.target.value
+                });}else if(event.target.id=="input2") {
+                    this.setState({
+                        input2: event.target.value
+                    });} else if(event.target.id=="Textarea") {
+                        this.setState({
+                            message: event.target.value
+                        });
+                    }
+            };
+
             render() {
                 return(
                     <div>
-                    <h1>Let's Chat</h1>    
+                        <h2 id="midhead">Send me an email, I promise I'll reply</h2>
+                        <form action="">
+                            <h3>Name</h3>
+                            <input id="input1" type="text" placeholder="Enter your name here" onChange={this.handleChange} />
+                            <br/>
+                            <h3>Email Address</h3>
+                            <input id="input2" type="text" placeholder="Enter your email here" onChange={this.handleChange} />
+                            <br/>
+                            <h3>Message</h3>
+                            <textarea name="enterText" id="Textarea" cols="30" rows="10" placeholder="Enter your message here" onChange={this.handleChange} ></textarea>
+                        </form > 
+                        <br/>
+                        <a id="submit" href={`mailto:baffoursilasanthony2001@gmail.com?subject=From%20your%20website%20by%20${this.state.input1}&body=${this.state.message}`}>Submit</a>
                     </div>
                 );
             }
@@ -138,7 +180,38 @@
             render() {
                 return(
                     <div>
-                    <h1>Gallery </h1>  
+                    <h1 id="gallerytxt">Gallery</h1>
+                    <hr/>
+                    <div className="images" >
+                    <img className="image" src="silas1.png" alt="camera_roll" />
+                    <img className="image" src="silas2.png" alt="camera_roll" />
+                    <img className="image" src="silas3.png" alt="camera_roll" />
+                    <img className="image" src="silas4.png" alt="camera_roll" />
+                    <img className="image" src="silas5.png" alt="camera_roll" />
+                    <img className="image" src="silas6.png" alt="camera_roll" />
+                    <img className="image" src="silas7.png" alt="camera_roll" />
+                    <img className="image" src="silas8.png" alt="camera_roll" />
+                    <img className="image" src="silas9.png" alt="camera_roll" />
+                    <img className="image" src="silas10.png" alt="camera_roll" />
+                    <img className="image" src="silas11.png" alt="camera_roll" />
+                    <img className="image" src="silas12.png" alt="camera_roll" />
+                    <img className="image" src="silas13.png" alt="camera_roll" />
+                    <img className="image" src="silas14.png" alt="camera_roll" />
+                    <img className="image" src="silas15.png" alt="camera_roll" />
+                    <img className="image" src="silas16.png" alt="camera_roll" />
+                    <img className="image" src="silas17.png" alt="camera_roll" />
+                    <img className="image" src="silas18.png" alt="camera_roll" />
+                    <img className="image" src="silas19.png" alt="camera_roll" />
+                    <img className="image" src="silas20.png" alt="camera_roll" />
+                    <img className="image" src="silas21.png" alt="camera_roll" />
+                    <img className="image" src="silas22.png" alt="camera_roll" />
+                    <img className="image" src="silas23.png" alt="camera_roll" />
+                    <img className="image" src="silas24.png" alt="camera_roll" />
+                    <img className="image" src="silas25.png" alt="camera_roll" />
+                    <img className="image" src="silas26.png" alt="camera_roll" />
+                    <img className="image" src="silas27.png" alt="camera_roll" />
+                    <img className="image" src="silas28.png" alt="camera_roll" />
+                    </div>
                     </div>
                 );
             }
@@ -150,7 +223,7 @@
             constructor(props) {
                 super(props);
                 this.state = {
-                    main: AboutMe
+                    main: Gallery
                 }
             }
 

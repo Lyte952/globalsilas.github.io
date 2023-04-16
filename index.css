@@ -10,20 +10,20 @@ body {
     font-weight: 400;
     color: rgb(60, 60, 194);
     margin-top: 0;
+    margin-right: 70px;
 }
 
 #tops {
     padding-top: 10px;
     box-shadow: 3px 3px 4px rgba(33, 33, 101, 0.3);
     margin-bottom: 20px;
-    background-color: white
+    background-color: white;
 }
 
 #down-name {
     margin-top: 5px;
     color: white;
-    font-size: small;
-    font-size: 100;
+    font-size: large;
     border-top: 5px;
     font-family: '__Inter_79e26d', '__Inter_Fallback_79e26d',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
 }
@@ -37,7 +37,6 @@ body {
     color: rgb(105, 117, 159);
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
-    box-shadow: 3px -3px 4px rgba(33, 33, 101, 0.4);
 }
 
 #switch-buttons {
@@ -54,41 +53,53 @@ body {
 }
 
 .top-button {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     height: 25px;
     background-color: white;
-    color: rgb(60, 60, 194);
+    color: rgb(134, 134, 236);
     margin: 5px;
     transform: scale(1);
     transition: 0.5s;
-    font-size: smaller;
-    font-weight: lighter;
+    font-size: 17px;
+    font-weight: 100;
     border: 0;
 }
 
 .top-button:hover, .topred {
     transform: scale(1.1);
     color: white;
-    background-color: #e54c38;
+    background-color: #e54c38; opacity: 70%;
     border-radius: 5px;
     box-shadow: -2px 2px 4px rgba(227, 82, 82, 0.7);
 }
 
-#purpose-desc, #purposeDesc {
+#purpose-desc {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: larger;
-    font-weight: 200;
+    color: #393b41;
+    font-weight: 100;
     padding: 5px;
-    margin-top: 0;
+    margin-top: 20px;
+    margin-bottom: 100px;
     animation: slide-in 1s ease-out;
+    text-align: center;
 }
 
-#purpose-desc {
-    text-align: center;
+#purposeDesc {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+    color: #393b41;
+    font-weight: 100;
+    padding: 20px;
+    animation: slide-in 1s ease-out;
+    margin-top: 20px;
+    box-shadow: inset 3px 3px 4px rgba(87, 85, 85, 0.5);
+    border-radius: 20px;
 }
 
   @keyframes slide-in {
     from {
-      transform: translateX(-100%);
+      transform: translateX(100%);
     }
     to {
       transform: translateX(0);
@@ -99,7 +110,9 @@ body {
     color: #e54c38;
     font-family: '__Inter_79e26d', '__Inter_Fallback_79e26d',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 40px;
+    font-weight: 200;
+    font-size: 30px;
 }
 
 #purpose-pad {
@@ -110,33 +123,32 @@ body {
     background-color: white;
 }
 
+hr {
+    margin-bottom: 0;
+    border-top: #d8d8d8;
+}
+
 .whiteButton {
     background-color: white;
     padding: 5px;
     color: rgb(183, 183, 212);
     margin: 5px;
+    width: 120px;
+    margin-left: 40px;
     transform: scale(0.9);
-    font-size: smaller;
-    font-weight: lighter;
+    font-size: 17px;
+    font-weight: 100;
     border: 0;
     transition: 0.3s;
     border-radius: 5px;
-    margin-left: 10px;
-    border: 1px solid #e54c38;
     color: #e54c38;
-    box-shadow: inset 3px 3px 3px rgba(87, 85, 85, 0.5);
-}
-
-.whiteButton:hover {
-    font-family: '__Inter_79e26d', '__Inter_Fallback_79e26d',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
-    transform: scale(1);
-    border: 0;
-    background-color: white;
-    border-radius: 10px;
-    border: 1px solid #e54c38;
+    /*box-shadow: inset 3px 3px 4px rgba(87, 85, 85, 0.5);*/
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .blueButton {
+    font-size: large;
     background-color: transparent;
     color: rgb(183, 183, 212);
     transition: 0.3s;
@@ -169,6 +181,40 @@ img {
     border-radius: 5px;
 }
 
+#gallerytxt {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 100;
+    font-size: 60px;
+    margin-left: 20px;
+    text-align: center;
+    color: #7c7d7e;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.image {
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 4px rgba(33, 33, 101, 0.4);
+    width: 300px;
+    height: 300px;
+    transform: scale(1);
+    transition: 0.5s;
+    animation: slide-in 0.5s ease-out;
+}
+
+.image:hover {
+    display: flex;
+    justify-content: center;
+    transform: translate(50%, 50%);
+    transform: scale(2);
+    z-index: 1;
+}
+
 h6 {
     font-size: 13px;
     font-weight: 200;
@@ -176,10 +222,72 @@ h6 {
 }
 
 a svg{
+    margin: 5px;
     transform: scale(1);
     transition: 0.3s;
 }
 
 a svg:hover {
     transform: scale(1.1);
+}
+
+#midhead {
+    margin-left: 20px;
+    padding: 5px;
+    color: #1139A8;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 40px;
+}
+
+input, textarea {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 20px;
+    margin-top: 3px;
+    width: 500px;
+    height: 40px;
+    padding-left: 20px;
+    border-radius: 20px;
+    font-size: large;
+    border: 0;
+    color: #626262;
+    box-shadow: inset 3px 3px 4px rgba(104, 103, 103, 0.4);
+}
+
+textarea {
+    height: 100px;
+    width: 700px;
+    font-size: large;
+}
+
+h3 {
+    margin-left: 30px;
+    margin-bottom: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 200;
+    font-size: large;
+    color: #7c7d7e;
+}
+
+a {
+    text-decoration: none;
+}
+
+#submit {
+    margin-left: 30px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #394d83;
+    color: white;
+    border-radius: 10px;
+    border: 0;
+    box-shadow: 3px 3px 4px rgba(104, 103, 103, 0.4);
+    transform: scale(1);
+    transition: 0.5s;
+}
+
+#submit:hover {
+    transform: scale(1.1) !important;
+    background-color: white;
+    color: #1139A8;
 }
