@@ -13,6 +13,10 @@ body {
     margin-right: 70px;
 }
 
+navbar {
+    width: 100%;
+}
+
 #tops {
     padding-top: 10px;
     box-shadow: 3px 3px 4px rgba(33, 33, 101, 0.3);
@@ -75,7 +79,7 @@ body {
 
 #purpose-desc {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: larger;
+    font-size: 20px;
     color: #393b41;
     font-weight: 100;
     padding: 5px;
@@ -87,7 +91,7 @@ body {
 
 #purposeDesc {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: larger;
+    font-size: 20px;
     color: #393b41;
     font-weight: 100;
     padding: 20px;
@@ -111,7 +115,7 @@ body {
     font-family: '__Inter_79e26d', '__Inter_Fallback_79e26d',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
     text-align: center;
     margin-top: 40px;
-    font-weight: 200;
+    font-weight: 300;
     font-size: 30px;
 }
 
@@ -243,7 +247,7 @@ input, textarea {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 20px;
     margin-top: 3px;
-    width: 500px;
+    width: 50%;
     height: 40px;
     padding-left: 20px;
     border-radius: 20px;
@@ -255,8 +259,9 @@ input, textarea {
 
 textarea {
     height: 100px;
-    width: 700px;
+    width: 70%;
     font-size: large;
+    padding-top: 10px;
 }
 
 h3 {
@@ -277,7 +282,7 @@ a {
     padding: 10px;
     padding-left: 15px;
     padding-right: 15px;
-    background-color: #394d83;
+    background-color: #1a398d;
     color: white;
     border-radius: 10px;
     border: 0;
@@ -290,4 +295,70 @@ a {
     transform: scale(1.1) !important;
     background-color: white;
     color: #1139A8;
+}
+
+@media (max-width: 500px) {
+
+
+
+    input, textarea {
+        margin: 20px;
+        width: 80%;
+        padding-left: 20px;
+        border-radius: 20px;
+    }
+
+    #midhead {
+        font-size: 30px;
+    }
+
+    #switch-buttons {
+    display: flex;
+    flex-direction: column;
+    }
+
+    #homedown {
+        margin-right: 0;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        color: rgb(105, 117, 159);
+        border-top-left-radius: 5px;
+        justify-content: center;
+        background-color: white;
+    }
+
+    .blueButton {
+        font-size: 14px;
+        color: #1139A8;
+        margin-top: 10px;
+    }
+
+    .whiteButton {
+        font-size: 15px;
+        margin-left: 0;
+        border-radius: 5px;
+        width: 100px;
+        border: 1px solid #e54c38;
+        margin-top: 10px;
+    }
+
+    #purpose-pad {
+        border: none;
+    }
+
+    .image {
+        border-radius: 1px;
+        box-shadow: 0;
+    }
+
+    .image:hover {
+        transform: scale(1);
+    }
+
+    #purposeDesc, #purpose-desc {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+    }
+    
 }
