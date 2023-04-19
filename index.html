@@ -17,6 +17,20 @@
 
         class Top extends React.Component {
 
+            toggleMenu = () => {
+                const menu = document.querySelector('nav ul');
+                menu.classList.toggle('show');
+                let svg1 = `<svg width="50px" height="50px" viewBox="-11.04 -11.04 46.08 46.08" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#1139A8"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.048"></g><g id="SVGRepo_iconCarrier"> <path d="M5 5L19 19M5 19L19 5" stroke="#00000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>`;
+                let svg2 = `<svg width="50px" height="50px" viewBox="-4.8 -4.8 33.60 33.60" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#1a398d" transform="rotate(0)matrix(-1, 0, 0, -1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.192"></g><g id="SVGRepo_iconCarrier"> <path d="M4 17H20M4 12H20M4 7H20" stroke="#00000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>`;
+                let svgContainer = document.querySelector('.menu-btn');
+                document.querySelector('.menu-btn').classList.toggle('open');
+                if (svgContainer.innerHTML === svg1) { 
+                    svgContainer.innerHTML = svg2;
+                }else {
+                    svgContainer.innerHTML = svg1;
+                }
+            }
+
             render () {
                 return(
                     <div>
@@ -25,18 +39,21 @@
                         <nav id="first-nav">
                             <img src="tradsign.png" alt="." width="30" height="30"></img> 
                             <h1 id="top-name">Baffour Silas Anthony</h1>
-                            <button value="AboutMe" className="top-button" onClick={this.props.mainH}>About Me</button>
-                            <button value="ANC" className="top-button" onClick={this.props.mainH}>Asunafo North Constituency</button>
-                            <button value="MyProjects" className="top-button" onClick={this.props.mainH}>My projects</button>
-                            <button value="Chat" className="top-button" onClick={this.props.mainH}>Let's Chat</button>
-                            <button value="Gallery" className="top-button" onClick={this.props.mainH}>Gallery</button>      
+                            <ul>
+                            <li><button value="AboutMe" className="top-button" onClick={this.props.mainH}>About Me</button></li>
+                            <li><button value="ANC" className="top-button" onClick={this.props.mainH}>Asunafo North Constituency</button></li>
+                            <li><button value="MyProjects" className="top-button" onClick={this.props.mainH}>My projects</button></li>
+                            <li><button value="Chat" className="top-button" onClick={this.props.mainH}>Let's Chat</button></li>
+                            <li><button value="Gallery" className="top-button" onClick={this.props.mainH}>Gallery</button></li>      
+                            </ul>
+                            <button className="menu-btn" onClick={this.toggleMenu}><svg width="50px" height="50px" viewBox="-4.8 -4.8 33.60 33.60" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#1a398d" transform="rotate(0)matrix(-1, 0, 0, -1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.192"></g><g id="SVGRepo_iconCarrier"> <path d="M4 17H20M4 12H20M4 7H20" stroke="#00000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
                         </nav>
                         </navbar>
                         <br />
                     </div>
                     </div>
                 );
-                }
+            } 
         }
 
         class AboutMe extends React.Component {
@@ -52,7 +69,7 @@
 
             render() {
 
-                return( 
+                return(
                     <div id="purpose-pad">
                         <div id="MyPurpose">
                             <h2 id="purpose-text">My Purpose</h2>
@@ -226,7 +243,7 @@
                 super(props);
                 this.state = {
                     main: AboutMe
-                }
+                };
             }
 
             render() {
@@ -238,6 +255,20 @@
                          <MainComponent />
                     </div>
                 );
+
+                // Get the toggle menu element
+                const toggleMenu = document.querySelector('.show');
+
+                // Add a click event listener to the document object
+                document.addEventListener('click', (event) => {
+                // Check if the target of the event is not inside the toggle menu
+                if (!toggleMenu.contains(event.target)) {
+                    // Collapse the toggle menu
+                    toggleMenu.classList.remove('.show');
+                }
+                });
+
+
             }
 
                 mainHome = (event) => {
@@ -268,6 +299,7 @@
         const root = ReactDOM.createRoot(container);
         root.render(<App />);
     </script>
+
     <br>
     <div id="footer">
         <h1 id="down-name"> <img src="tradsign.png" alt="." title="Traditional logo" width="25" height="25"></img> Baffour Silas Anthony</h1>

@@ -4,13 +4,85 @@ body {
     margin: 0;
     background-color: #f5f7fc;
 }
+  
+nav#first-nav ul {
+    list-style: none;
+    margin-top: 30px;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav#first-nav ul li {
+    margin-right: 1rem;
+  }
+  
+  
+  
+  nav#first-nav .menu-btn {
+    display: none;
+  }
+  
+  @media (max-width: 900px) {
+    nav#first-nav ul {
+      display: none;
+    }
+
+    button.top-button {
+        background-color: transparent;
+        border-radius: 5px;
+        color: white;
+        margin: 5px;
+        transform: scale(1);
+        transition: 0.5s;
+        font-size: 17px;
+        font-weight: 100;
+        border: 0;
+    }
+  
+    nav#first-nav .menu-btn {
+      margin-top: 20px;
+      display: block;
+      border: 0;
+      background-color: white;
+      margin-bottom: 5px;
+    }
+
+    nav#first-nav .menu-btn.open {
+        padding: 0;
+        width: 50px;
+        height: 50px;
+        transform: rotate(180deg);
+        transition: all 0.3s ease;
+    }
+  
+    nav#first-nav ul.show {
+      margin-top: 50px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 4rem;
+      right: 0;
+      background-color: rgba(21, 50, 163, 0.75);
+      width: 100%;
+      z-index: 1;
+    }
+  
+    nav#first-nav ul.show li {
+      margin-top: 10px;
+      margin: 0.5rem;
+      text-align: center;
+      z-index: 1;
+    }
+  
+  }
+  
 
 #top-name, h2 {
     font-size: 25px;
     font-weight: 400;
     color: rgb(60, 60, 194);
-    margin-top: 0;
-    margin-right: 70px;
+    margin-top: 30px;
 }
 
 navbar {
@@ -51,15 +123,14 @@ navbar {
 #first-nav {
     display: flex;
     justify-content: space-evenly;
-    height: 50px;
     margin-bottom: 0;
-    margin-top: 20px;
 }
 
 .top-button {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     height: 25px;
     background-color: white;
+    border-radius: 5px;
     color: rgb(134, 134, 236);
     margin: 5px;
     transform: scale(1);
@@ -72,7 +143,7 @@ navbar {
 .top-button:hover, .topred {
     transform: scale(1.1);
     color: white;
-    background-color: #e54c38; opacity: 70%;
+    background-color: #e54c38;
     border-radius: 5px;
     box-shadow: -2px 2px 4px rgba(227, 82, 82, 0.7);
 }
@@ -152,7 +223,7 @@ hr {
 }
 
 .blueButton {
-    font-size: large;
+    font-size: 20px;
     background-color: transparent;
     color: rgb(183, 183, 212);
     transition: 0.3s;
@@ -183,6 +254,7 @@ hr {
 img {
     border: 0;
     border-radius: 5px;
+    margin-top: 30px;
 }
 
 #gallerytxt {
@@ -212,10 +284,7 @@ img {
 }
 
 .image:hover {
-    display: flex;
-    justify-content: center;
-    transform: translate(50%, 50%);
-    transform: scale(2);
+    transform: scale(1.3);
     z-index: 1;
 }
 
@@ -297,7 +366,7 @@ a {
     color: #1139A8;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
 
 
 
@@ -331,7 +400,7 @@ a {
     .blueButton {
         font-size: 14px;
         color: #1139A8;
-        margin-top: 10px;
+        margin-top: 15px;
     }
 
     .whiteButton {
@@ -353,12 +422,16 @@ a {
     }
 
     .image:hover {
-        transform: scale(1);
+        transform: scale(1.2);
     }
 
     #purposeDesc, #purpose-desc {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 16px;
+    }
+
+    #purpose-text {
+        text-align: center;
     }
     
 }
